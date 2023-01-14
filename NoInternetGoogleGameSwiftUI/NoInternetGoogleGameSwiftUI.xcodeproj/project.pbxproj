@@ -20,6 +20,12 @@
 		AF337BEF297282C200450704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BEE297282C200450704 /* Preview Assets.xcassets */; };
 		AF337BF3297285CD00450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
 		AF337BF4297285CD00450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
+		AF337BF8297290DF00450704 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BF7297290DF00450704 /* PressStart2P.ttf */; };
+		AF337BF9297290DF00450704 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BF7297290DF00450704 /* PressStart2P.ttf */; };
+		AF337BFA297290DF00450704 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BF7297290DF00450704 /* PressStart2P.ttf */; };
+		AF337BFF2972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
+		AF337C002972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
+		AF337C012972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,11 @@
 		AF337BE9297282C100450704 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF337BEB297282C200450704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF337BEE297282C200450704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AF337BF7297290DF00450704 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
+		AF337BFB2972911F00450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF337BFC2972913100450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF337BFD2972914000450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AF337BFE2972933900450704 /* PressStart2P.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +132,7 @@
 		AF337BA429727CD700450704 /* Game-MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				AF337BFD2972914000450704 /* Info.plist */,
 				AF337BA529727CD700450704 /* Game_MacOSApp.swift */,
 				AF337BA729727CD700450704 /* ContentView.swift */,
 				AF337BAE29727CD800450704 /* Game_MacOS.entitlements */,
@@ -140,6 +152,7 @@
 		AF337BB22972819C00450704 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				AF337BF52972909C00450704 /* Fonts */,
 				AF337BA929727CD800450704 /* Assets.xcassets */,
 			);
 			path = Sources;
@@ -148,6 +161,7 @@
 		AF337BB82972824600450704 /* Game-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				AF337BFC2972913100450704 /* Info.plist */,
 				AF337BB92972824600450704 /* Game_iOSApp.swift */,
 				AF337BBB2972824600450704 /* ContentView.swift */,
 				AF337BBF2972824700450704 /* Preview Content */,
@@ -166,6 +180,7 @@
 		AF337BE6297282C100450704 /* Game-watchOS */ = {
 			isa = PBXGroup;
 			children = (
+				AF337BFB2972911F00450704 /* Info.plist */,
 				AF337BE7297282C100450704 /* Game_watchOSApp.swift */,
 				AF337BE9297282C100450704 /* ContentView.swift */,
 				AF337BEB297282C200450704 /* Assets.xcassets */,
@@ -180,6 +195,15 @@
 				AF337BEE297282C200450704 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AF337BF52972909C00450704 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AF337BFE2972933900450704 /* PressStart2P.otf */,
+				AF337BF7297290DF00450704 /* PressStart2P.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +306,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF337BFF2972933900450704 /* PressStart2P.otf in Resources */,
+				AF337BF8297290DF00450704 /* PressStart2P.ttf in Resources */,
 				AF337BAD29727CD800450704 /* Preview Assets.xcassets in Resources */,
 				AF337BAA29727CD800450704 /* Assets.xcassets in Resources */,
 			);
@@ -291,6 +317,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF337C002972933900450704 /* PressStart2P.otf in Resources */,
+				AF337BF9297290DF00450704 /* PressStart2P.ttf in Resources */,
 				AF337BF3297285CD00450704 /* Assets.xcassets in Resources */,
 				AF337BC12972824700450704 /* Preview Assets.xcassets in Resources */,
 			);
@@ -300,7 +328,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF337C012972933900450704 /* PressStart2P.otf in Resources */,
 				AF337BEF297282C200450704 /* Preview Assets.xcassets in Resources */,
+				AF337BFA297290DF00450704 /* PressStart2P.ttf in Resources */,
 				AF337BF4297285CD00450704 /* Assets.xcassets in Resources */,
 				AF337BEC297282C200450704 /* Assets.xcassets in Resources */,
 			);
@@ -412,6 +442,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-MacOS/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,6 +518,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-MacOS/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -564,6 +596,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -641,6 +674,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-iOS/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -724,6 +758,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-watchOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Game-watchOS";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
@@ -800,6 +835,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Game-watchOS/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Game-watchOS";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
