@@ -9,38 +9,79 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
+    @State private var cloudsPosX = [258.0, 329.0]
+    @State private var groundPosX = 1600.0
+    @State private var obstaclesPosX = [1000.0, 1350.0, 1700.0, 2050.0]
+    private let obstaclesPosXMax = [-2200.0, -1850.0, -1500.0, -1150]
+    
     var body: some View {
         ZStack{
             clouds
+            obtacles
             
             Text("hello 00000")
                 .font(.custom("PressStart2P", size: 29))
             
-            Image("obstacle-1")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 92)
-                .offset(x: 72, y: -7)
             VStack {
-                dino
                 ground
+                dino
+            }
+        }
+        .onAppear{
+            withAnimation(.linear(duration: 15).repeatForever(autoreverses: false)){
+                groundPosX = -1600
+                obstaclesPosX[0] = obstaclesPosXMax[0]
+                obstaclesPosX[1] = obstaclesPosXMax[1]
+                obstaclesPosX[2] = obstaclesPosXMax[2]
+                obstaclesPosX[3] = obstaclesPosXMax[3]
+            }
+            withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)){
+                cloudsPosX[0] = cloudsPosX[0] * -1
+            }
+            withAnimation(.linear(duration: 14).repeatForever(autoreverses: false)){
+                cloudsPosX[1] = cloudsPosX[1] * -1
             }
         }
     }
 }
 extension ContentView {
+    private var obtacles: some View{
+        ZStack{
+            
+            Image("obstacle-1")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 92)
+                .offset(x: obstaclesPosX[0], y: 24)
+            Image("obstacle-2")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 92)
+                .offset(x: obstaclesPosX[1], y: 24)
+            Image("obstacle-group-1")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 92)
+                .offset(x: obstaclesPosX[2], y: 24)
+            Image("obstacle-group-2")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 92)
+                .offset(x: obstaclesPosX[3], y: 24)
+        }
+    }
     private var clouds: some View {
         ZStack{
             Image("cloud")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 29)
-                .offset(x: -92, y: -229)
+                .offset(x: cloudsPosX[0], y: -229)
             Image("cloud")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 29)
-                .offset(x: 72, y: -129)
+                .offset(x: cloudsPosX[1], y: -129)
         }
     }
     private var dino: some View {
@@ -61,8 +102,9 @@ extension ContentView {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 2900)
+                .offset(x: groundPosX)
         }
-        .offset(y: -34)
+        .offset(y: 114)
     }
 }
 struct ContentView_Previews: PreviewProvider {
