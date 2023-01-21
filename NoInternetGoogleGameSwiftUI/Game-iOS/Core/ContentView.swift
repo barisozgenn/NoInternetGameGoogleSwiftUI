@@ -47,27 +47,10 @@ struct ContentView: View {
 extension ContentView {
     private var obtacles: some View{
         ZStack{
-            
-            Image("obstacle-1")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 92)
-                .offset(x: obstaclesPosX[0], y: 24)
-            Image("obstacle-2")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 92)
-                .offset(x: obstaclesPosX[1], y: 24)
-            Image("obstacle-group-1")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 92)
-                .offset(x: obstaclesPosX[2], y: 24)
-            Image("obstacle-group-2")
-                .resizable()
-                .scaledToFit()
-                .frame(height: 92)
-                .offset(x: obstaclesPosX[3], y: 24)
+            ObstacleView().offset(x: obstaclesPosX[0], y: 29)
+            ObstacleView().offset(x: obstaclesPosX[1], y: 29)
+            ObstacleView().offset(x: obstaclesPosX[2], y: 34)
+            ObstacleView().offset(x: obstaclesPosX[3], y: 32)
         }
     }
     private var clouds: some View {
@@ -105,6 +88,16 @@ extension ContentView {
                 .offset(x: groundPosX)
         }
         .offset(y: 114)
+    }
+    
+    struct ObstacleView : View {
+        let images = ["obstacle-1","obstacle-2","obstacle-group-1","obstacle-group-2"]
+        var body: some View {
+            Image(images[images.indices.randomElement()!])
+                .resizable()
+                .scaledToFit()
+                .frame(height: 72)
+        }
     }
 }
 struct ContentView_Previews: PreviewProvider {
