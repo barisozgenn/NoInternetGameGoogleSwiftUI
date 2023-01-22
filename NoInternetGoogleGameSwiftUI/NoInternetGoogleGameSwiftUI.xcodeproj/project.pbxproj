@@ -26,6 +26,12 @@
 		AF337BFF2972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
 		AF337C002972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
 		AF337C012972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
+		AF535615297D5F80005C8083 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
+		AF535616297D5F80005C8083 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
+		AF535617297D5F80005C8083 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
+		AF535619297D60F2005C8083 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
+		AF53561A297D60F2005C8083 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
+		AF53561B297D60F2005C8083 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +55,8 @@
 		AF337BFC2972913100450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF337BFD2972914000450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF337BFE2972933900450704 /* PressStart2P.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.otf; sourceTree = "<group>"; };
+		AF535614297D5F80005C8083 /* DinoStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoStateModel.swift; sourceTree = "<group>"; };
+		AF535618297D60F2005C8083 /* ObstacleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +109,8 @@
 		AF337B9B29727BF600450704 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AF535614297D5F80005C8083 /* DinoStateModel.swift */,
+				AF535618297D60F2005C8083 /* ObstacleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -359,8 +369,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF535619297D60F2005C8083 /* ObstacleModel.swift in Sources */,
 				AF337BA829727CD700450704 /* ContentView.swift in Sources */,
 				AF337BA629727CD700450704 /* Game_MacOSApp.swift in Sources */,
+				AF535615297D5F80005C8083 /* DinoStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,8 +380,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF53561A297D60F2005C8083 /* ObstacleModel.swift in Sources */,
 				AF337BBC2972824600450704 /* ContentView.swift in Sources */,
 				AF337BBA2972824600450704 /* Game_iOSApp.swift in Sources */,
+				AF535616297D5F80005C8083 /* DinoStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +391,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF53561B297D60F2005C8083 /* ObstacleModel.swift in Sources */,
 				AF337BEA297282C100450704 /* ContentView.swift in Sources */,
 				AF337BE8297282C100450704 /* Game_watchOSApp.swift in Sources */,
+				AF535617297D5F80005C8083 /* DinoStateModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

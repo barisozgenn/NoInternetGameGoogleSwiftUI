@@ -91,9 +91,9 @@ extension ContentView {
     }
     
     struct ObstacleView : View {
-        let images = ["obstacle-1","obstacle-2","obstacle-group-1","obstacle-group-2"]
+        let obstacleList =  ObstacleModel.allCases
         var body: some View {
-            Image(images[images.indices.randomElement()!])
+            Image(obstacleList[obstacleList.indices.randomElement()!].imageName)
                 .resizable()
                 .scaledToFit()
                 .frame(height: 72)
