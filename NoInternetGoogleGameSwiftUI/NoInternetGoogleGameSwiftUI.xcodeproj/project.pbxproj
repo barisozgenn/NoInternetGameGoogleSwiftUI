@@ -12,7 +12,7 @@
 		AF337BAA29727CD800450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
 		AF337BAD29727CD800450704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BAC29727CD800450704 /* Preview Assets.xcassets */; };
 		AF337BBA2972824600450704 /* Game_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BB92972824600450704 /* Game_iOSApp.swift */; };
-		AF337BBC2972824600450704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BBB2972824600450704 /* ContentView.swift */; };
+		AF337BBC2972824600450704 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BBB2972824600450704 /* GameView.swift */; };
 		AF337BC12972824700450704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BC02972824700450704 /* Preview Assets.xcassets */; };
 		AF337BE8297282C100450704 /* Game_watchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BE7297282C100450704 /* Game_watchOSApp.swift */; };
 		AF337BEA297282C100450704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BE9297282C100450704 /* ContentView.swift */; };
@@ -43,7 +43,7 @@
 		AF337BAE29727CD800450704 /* Game_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Game_MacOS.entitlements; sourceTree = "<group>"; };
 		AF337BB72972824600450704 /* Game-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF337BB92972824600450704 /* Game_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_iOSApp.swift; sourceTree = "<group>"; };
-		AF337BBB2972824600450704 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AF337BBB2972824600450704 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AF337BC02972824700450704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF337BE5297282C100450704 /* Game-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF337BE7297282C100450704 /* Game_watchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_watchOSApp.swift; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 		AFC8FA77297C22BD001BC61B /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				AF337BBB2972824600450704 /* ContentView.swift */,
+				AF337BBB2972824600450704 /* GameView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -381,7 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF53561A297D60F2005C8083 /* ObstacleModel.swift in Sources */,
-				AF337BBC2972824600450704 /* ContentView.swift in Sources */,
+				AF337BBC2972824600450704 /* GameView.swift in Sources */,
 				AF337BBA2972824600450704 /* Game_iOSApp.swift in Sources */,
 				AF535616297D5F80005C8083 /* DinoStateModel.swift in Sources */,
 			);

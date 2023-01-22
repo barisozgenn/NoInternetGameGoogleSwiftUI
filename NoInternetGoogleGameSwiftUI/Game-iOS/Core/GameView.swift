@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  GameView.swift
 //  Game-iOS
 //
 //  Created by Baris OZGEN on 14.01.2023.
@@ -7,20 +7,19 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct GameView: View {
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
     @State private var cloudsPosX = [258.0, 329.0]
     @State private var groundPosX = 1600.0
     @State private var obstaclesPosX = [1000.0, 1350.0, 1700.0, 2050.0]
     private let obstaclesPosXMax = [-2200.0, -1850.0, -1500.0, -1150]
+    @State private var dinoState : DinoStateModel = .walk
     
     var body: some View {
         ZStack{
             clouds
             obtacles
-            
-            Text("hello 00000")
-                .font(.custom("PressStart2P", size: 29))
+            scoreLabel
             
             VStack {
                 ground
@@ -28,6 +27,11 @@ struct ContentView: View {
             }
         }
         .onAppear{
+            dinoCurrentImage = UIImage(named: "\(dinoState.imageName)left")!
+            withAnimation(.spring(response: 0.04).repeatForever()){
+                dinoCurrentImage = UIImage(named: "\(dinoState.imageName)right")!
+            }
+            
             withAnimation(.linear(duration: 15).repeatForever(autoreverses: false)){
                 groundPosX = -1600
                 obstaclesPosX[0] = obstaclesPosXMax[0]
@@ -42,9 +46,12 @@ struct ContentView: View {
                 cloudsPosX[1] = cloudsPosX[1] * -1
             }
         }
+        .onChange(of: dinoState) { newDinoState in
+            getDinoState(state: newDinoState)
+        }
     }
 }
-extension ContentView {
+extension GameView {
     private var obtacles: some View{
         ZStack{
             ObstacleView().offset(x: obstaclesPosX[0], y: 29)
@@ -90,6 +97,14 @@ extension ContentView {
         .offset(y: 114)
     }
     
+    private var scoreLabel: some View {
+        HStack{
+            Text("hello 00000")
+                .font(.custom("PressStart2P", size: 29))
+        }
+        .frame(maxWidth: 350, maxHeight: .infinity, alignment: .topTrailing)
+        .padding()
+    }
     struct ObstacleView : View {
         let obstacleList =  ObstacleModel.allCases
         var body: some View {
@@ -99,9 +114,21 @@ extension ContentView {
                 .frame(height: 72)
         }
     }
+    
+    func getDinoState(state newDinoState: DinoStateModel){
+        switch newDinoState {
+        case .walk:
+            dinoCurrentImage = UIImage(named: "\(newDinoState.imageName)left")!
+            withAnimation(.easeIn(duration: 2).repeatForever()){
+                dinoCurrentImage = UIImage(named: "\(newDinoState.imageName)right")!
+            }
+        default:
+            dinoCurrentImage = UIImage(named: newDinoState.imageName)!
+        }
+    }
 }
-struct ContentView_Previews: PreviewProvider {
+struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GameView()
     }
 }
