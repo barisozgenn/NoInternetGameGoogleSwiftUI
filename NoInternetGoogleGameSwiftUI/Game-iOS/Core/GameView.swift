@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GameView: View {
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
+    @State private var dinoPosY = 0.0
     @State private var cloudsPosX = [258.0, 329.0]
     @State private var groundPosX = 1600.0
     @State private var obstaclesPosX = [1000.0, 1350.0, 1700.0, 2050.0]
@@ -27,10 +28,7 @@ struct GameView: View {
             }
         }
         .onAppear{
-            dinoCurrentImage = UIImage(named: "\(dinoState.imageName)left")!
-            withAnimation(.spring(response: 0.04).repeatForever()){
-                dinoCurrentImage = UIImage(named: "\(dinoState.imageName)right")!
-            }
+            getDinoState(state: dinoState)
             
             withAnimation(.linear(duration: 15).repeatForever(autoreverses: false)){
                 groundPosX = -1600
@@ -70,6 +68,7 @@ extension GameView {
             Image("cloud")
                 .resizable()
                 .scaledToFit()
+                .scaleEffect(x: -1)
                 .frame(height: 29)
                 .offset(x: cloudsPosX[1], y: -129)
         }
@@ -79,7 +78,7 @@ extension GameView {
             .resizable()
             .scaledToFit()
             .frame(maxHeight: 107)
-            .offset(x: -107)
+            .offset(x: -107, y: dinoPosY)
     }
     private var ground: some View {
         ZStack{
@@ -104,6 +103,12 @@ extension GameView {
         }
         .frame(maxWidth: 350, maxHeight: .infinity, alignment: .topTrailing)
         .padding()
+        .onTapGesture {
+            withAnimation(.spring()){
+                dinoState = .jump
+            }
+        }
+        .zIndex(1)
     }
     struct ObstacleView : View {
         let obstacleList =  ObstacleModel.allCases
@@ -118,9 +123,21 @@ extension GameView {
     func getDinoState(state newDinoState: DinoStateModel){
         switch newDinoState {
         case .walk:
-            dinoCurrentImage = UIImage(named: "\(newDinoState.imageName)left")!
-            withAnimation(.easeIn(duration: 2).repeatForever()){
-                dinoCurrentImage = UIImage(named: "\(newDinoState.imageName)right")!
+            dinoCurrentImage = UIImage(named: "\(dinoState.imageName)left")!
+            
+            
+            dinoPosY = 0
+            withAnimation(.spring(response: 0.04).repeatForever()){
+                dinoCurrentImage = UIImage(named: "\(dinoState.imageName)right")!
+            }
+        case .jump:
+            withAnimation(.spring()){
+                dinoCurrentImage = UIImage(named: newDinoState.imageName)!
+            }
+            withAnimation(.spring(response: 2)){
+                if dinoPosY == 0 {
+                    dinoPosY = -129}
+                else if dinoPosY < -114 {dinoState = .walk}
             }
         default:
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
