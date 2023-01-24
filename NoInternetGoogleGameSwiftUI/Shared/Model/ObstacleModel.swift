@@ -22,7 +22,7 @@ enum ObstacleModel : Int, CaseIterable, Identifiable {
         case .obs2:
             return "obstacle-2"
         case .obs3:
-            return ""
+            return "obstacle-group-1"
         case .obs4:
             return "obstacle-group-2"
         }

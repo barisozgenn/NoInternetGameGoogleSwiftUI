@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import GameplayKit
 struct GameView: View {
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
     @State private var dinoPosY = 0.0
@@ -15,7 +15,8 @@ struct GameView: View {
     @State private var obstaclesPosX = [1000.0, 1350.0, 1700.0, 2050.0]
     private let obstaclesPosXMax = [-2200.0, -1850.0, -1500.0, -1150]
     @State private var dinoState : DinoStateModel = .walk
-    
+    @State private var score = 0
+   
     var body: some View {
         ZStack{
             clouds
@@ -26,6 +27,7 @@ struct GameView: View {
                 ground
                 dino
             }
+        
         }
         .onAppear{
             getDinoState(state: dinoState)
@@ -52,10 +54,11 @@ struct GameView: View {
 extension GameView {
     private var obtacles: some View{
         ZStack{
-            ObstacleView().offset(x: obstaclesPosX[0], y: 29)
-            ObstacleView().offset(x: obstaclesPosX[1], y: 29)
-            ObstacleView().offset(x: obstaclesPosX[2], y: 34)
-            ObstacleView().offset(x: obstaclesPosX[3], y: 32)
+            ObstacleView(posX: $obstaclesPosX[0])
+            ObstacleView(posX: $obstaclesPosX[1])
+            ObstacleView(posX: $obstaclesPosX[2])
+            ObstacleView(posX: $obstaclesPosX[3])
+           
         }
     }
     private var clouds: some View {
@@ -110,15 +113,6 @@ extension GameView {
         }
         .zIndex(1)
     }
-    struct ObstacleView : View {
-        let obstacleList =  ObstacleModel.allCases
-        var body: some View {
-            Image(obstacleList[obstacleList.indices.randomElement()!].imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 72)
-        }
-    }
     
     func getDinoState(state newDinoState: DinoStateModel){
         switch newDinoState {
@@ -143,6 +137,8 @@ extension GameView {
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
         }
     }
+    
+    
 }
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
