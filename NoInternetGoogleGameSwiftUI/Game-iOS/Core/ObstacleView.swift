@@ -5,7 +5,6 @@
 //  Created by Baris OZGEN on 24.01.2023.
 //
 import SwiftUI
-import GameplayKit
 struct ObstacleView : View {
     let obstacleList =  ObstacleModel.allCases
     @Binding var posX : Double
