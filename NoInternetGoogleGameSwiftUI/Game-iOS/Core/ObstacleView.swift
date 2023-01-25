@@ -7,26 +7,47 @@
 import SwiftUI
 struct ObstacleView : View {
     let obstacleList =  ObstacleModel.allCases
-    @Binding var posX : Double
+    @State private var posX : Double = 0
+    @State private var maxX: Double = 1992
+    @State private var minX: Double = -1992
+    @State var speed: Double = 14
     var body: some View {
-        ZStack{
-                Rectangle()
-                    .frame(width: 29,height: 192)
-                    .offset(x: 58, y: -58)
+        GeometryReader { geo in
             
-            Image(obstacleList[obstacleList.indices.randomElement()!].imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 72)
-            
+            HStack(alignment: .bottom){
+                Image(obstacleList[obstacleList.indices.randomElement()!].imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 72)
+                ZStack{
+                    Rectangle()
+                        .frame(width: 29,height: 192)
+                    
+                }
+            }
+            .background(.yellow)
+            .onAppear{
+                maxX = geo.size.width + 129
+                minX = maxX * -1
+                posX = maxX
                 
+                withAnimation(.linear(duration: speed).repeatForever(autoreverses: false)){
+                    posX = minX
+                }
+            }
+            .offset(x: posX)
+            
+            Text("posX:\(posX)")
+                .foregroundColor(.white)
         }
-        .offset(x: posX, y: 29)
+        .frame(height: 192)
+        .background(.red)
+        
     }
 }
 
 struct ObstacleView_Previews: PreviewProvider {
     static var previews: some View {
-        ObstacleView(posX: .constant(0)).offset(x: 0, y: 0)
+        ObstacleView().offset(x: 0, y: 0)
     }
 }
