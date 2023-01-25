@@ -8,37 +8,39 @@
 import SwiftUI
 
 struct CloudsView: View {
-    @State private var cloudsPosX = [258.0, -229.0]
-    @State private var cloudsPosY = [-229, -129.0]
+    @State private var cloudsPosX = [300.0, 300.0, 300]
+    @State private var cloudsPosY = [-229, -129.0, -292]
     var body: some View {
         ZStack{
+            
+            Image("cloud")
+                .resizable()
+                .scaledToFit()
+                .frame(height: 14)
+                .offset(x: cloudsPosX[2], y: cloudsPosY[2])
+            
             Image("cloud")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 29)
-                .offset(x: cloudsPosX[0], y: -229)
+                .offset(x: cloudsPosX[0], y: cloudsPosY[0])
+            
             Image("cloud")
                 .resizable()
                 .scaledToFit()
                 .scaleEffect(x: -1)
                 .frame(height: 29)
-                .offset(x: cloudsPosX[1], y: -129)
+                .offset(x: cloudsPosX[1], y: cloudsPosY[1])
         }
         .onAppear{
+            withAnimation(.linear(duration: 30).repeatForever(autoreverses: false)){
+                cloudsPosX[2] = -229.0
+            }
             withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)){
-                cloudsPosX[0] = cloudsPosX[0] * -1
-                
-                
-                if -228.29 > cloudsPosX[0] {
-                    cloudsPosY[0] = Double.random(in: -207.0 ... -229.0)
-                }
+                cloudsPosX[0] = -229.0
             }
             withAnimation(.linear(duration: 14).repeatForever(autoreverses: false)){
-                cloudsPosX[1] = cloudsPosX[1] * -1
-                
-                if -127.29 > cloudsPosX[1] {
-                    cloudsPosY[1] = Double.random(in: -107.0 ... -129.0)
-                }
+                cloudsPosX[1] = -229.0
             }
         }
     }
