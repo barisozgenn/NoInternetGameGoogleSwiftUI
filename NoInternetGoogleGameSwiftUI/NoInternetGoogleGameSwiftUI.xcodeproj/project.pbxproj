@@ -35,6 +35,7 @@
 		AFD91488297FCC2C00436337 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
 		AFD91489297FCC2C00436337 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
 		AFD9148A297FCC2C00436337 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
+		AFDE343C29824D89005B0D26 /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE343B29824D89005B0D26 /* GroundView.swift */; };
 		AFE0C73E298121B3006CA463 /* DinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C73D298121B3006CA463 /* DinoView.swift */; };
 		AFE0C73F298121B3006CA463 /* DinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C73D298121B3006CA463 /* DinoView.swift */; };
 		AFE0C740298121B3006CA463 /* DinoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE0C73D298121B3006CA463 /* DinoView.swift */; };
@@ -67,6 +68,7 @@
 		AF535614297D5F80005C8083 /* DinoStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoStateModel.swift; sourceTree = "<group>"; };
 		AF535618297D60F2005C8083 /* ObstacleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleModel.swift; sourceTree = "<group>"; };
 		AFD91487297FCC2C00436337 /* ObstacleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleView.swift; sourceTree = "<group>"; };
+		AFDE343B29824D89005B0D26 /* GroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
 		AFE0C73D298121B3006CA463 /* DinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoView.swift; sourceTree = "<group>"; };
 		AFE0C7412981293C006CA463 /* CloudsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +245,7 @@
 				AFD91487297FCC2C00436337 /* ObstacleView.swift */,
 				AFE0C73D298121B3006CA463 /* DinoView.swift */,
 				AFE0C7412981293C006CA463 /* CloudsView.swift */,
+				AFDE343B29824D89005B0D26 /* GroundView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				AFD91489297FCC2C00436337 /* ObstacleView.swift in Sources */,
 				AF337BBA2972824600450704 /* Game_iOSApp.swift in Sources */,
 				AFE0C73F298121B3006CA463 /* DinoView.swift in Sources */,
+				AFDE343C29824D89005B0D26 /* GroundView.swift in Sources */,
 				AF535616297D5F80005C8083 /* DinoStateModel.swift in Sources */,
 				AFE0C7432981293C006CA463 /* CloudsView.swift in Sources */,
 			);

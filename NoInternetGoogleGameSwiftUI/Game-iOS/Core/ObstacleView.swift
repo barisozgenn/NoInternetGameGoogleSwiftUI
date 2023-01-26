@@ -8,9 +8,9 @@ import SwiftUI
 struct ObstacleView : View {
     let obstacleList =  ObstacleModel.allCases
     @State private var posX : Double = 0
-    @State private var maxX: Double = 1992
-    @State private var minX: Double = -1992
-    @State var speed: Double = 14
+    @State private var maxX: Double = 400
+    @State private var minX: Double = -400
+    @State var speed: Double = 12
     var body: some View {
         GeometryReader { geo in
             

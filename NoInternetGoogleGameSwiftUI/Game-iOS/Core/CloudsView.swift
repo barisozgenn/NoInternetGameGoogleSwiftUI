@@ -34,13 +34,13 @@ struct CloudsView: View {
         }
         .onAppear{
             withAnimation(.linear(duration: 30).repeatForever(autoreverses: false)){
-                cloudsPosX[2] = -229.0
+                cloudsPosX[2] = -258.0
             }
             withAnimation(.linear(duration: 20).repeatForever(autoreverses: false)){
-                cloudsPosX[0] = -229.0
+                cloudsPosX[0] = -258.0
             }
             withAnimation(.linear(duration: 14).repeatForever(autoreverses: false)){
-                cloudsPosX[1] = -229.0
+                cloudsPosX[1] = -258.0
             }
         }
     }
