@@ -20,7 +20,7 @@ struct GroundView: View {
             .frame(width: 429)
             .clipped()
         .onAppear{
-            withAnimation(.linear(duration: 16).repeatForever(autoreverses: false)){
+            withAnimation(.linear(duration: 12.9).repeatForever(autoreverses: false)){
                 groundPosX = -900
             }
         }

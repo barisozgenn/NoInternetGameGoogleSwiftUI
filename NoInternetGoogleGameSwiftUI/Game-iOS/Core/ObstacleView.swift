@@ -15,7 +15,7 @@ struct ObstacleView : View {
     @State var changeIt = false
     @State var colliderHit = false
     @State var getScore = false
-    let timer = Timer.publish(every: 0.009, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.007, on: .main, in: .common).autoconnect()
     
     var body: some View {
            

@@ -9,7 +9,6 @@ import SwiftUI
 import GameplayKit
 struct GameView: View {
    
-   
     @State private var score = 0
    
     var body: some View {
@@ -36,7 +35,6 @@ extension GameView {
         .padding()
         .zIndex(1)
     }
-    
 }
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {

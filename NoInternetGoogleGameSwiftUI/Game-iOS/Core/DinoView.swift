@@ -10,19 +10,23 @@ import SwiftUI
 struct DinoView: View {
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
     @State var dinoPosY = 0.0
+    @State var dinoPosX = -107.0
     @State var dinoState : DinoStateModel = .walk
-
+    
     var body: some View {
         Image(uiImage: dinoCurrentImage)
             .resizable()
             .scaledToFit()
             .frame(maxHeight: 107)
-            .offset(x: -107, y: dinoPosY)
+            .offset(x: dinoPosX, y: dinoPosY)
             .onAppear{
                 getDinoState(state: dinoState)
             }
             .onChange(of: dinoState) { newDinoState in
                 getDinoState(state: newDinoState)
+            }
+            .onTapGesture {
+                getDinoState(state: .jump)
             }
     }
 }
@@ -37,14 +41,20 @@ extension DinoView{
             withAnimation(.spring(response: 0.04).repeatForever()){
                 dinoCurrentImage = UIImage(named: "\(dinoState.imageName)right")!
             }
+           
         case .jump:
-            withAnimation(.spring()){
-                dinoCurrentImage = UIImage(named: newDinoState.imageName)!
+            dinoCurrentImage = UIImage(named: newDinoState.imageName)!
+            
+            withAnimation(.spring().speed(0.92)){
+                dinoPosY = -192
             }
-            withAnimation(.spring(response: 2)){
-                if dinoPosY == 0 {
-                    dinoPosY = -129}
-                else if dinoPosY < -114 {dinoState = .walk}
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.92) {
+                withAnimation(.spring().speed(0.92)){
+                    dinoPosY = -7
+                    dinoState = .walk
+                    getDinoState(state: .walk)
+                    
+                }
             }
         default:
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
