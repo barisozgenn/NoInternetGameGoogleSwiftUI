@@ -12,8 +12,10 @@ struct DinoView: View {
     @State var dinoPosY = 0.0
     @State var dinoPosX = -129.0
     @State var dinoState : DinoStateModel = .walk
-    let timer = Timer.publish(every: 0.02, on: .main, in: .common).autoconnect()
+    let timer = Timer.publish(every: 0.0258, on: .main, in: .common).autoconnect()
     @State private var isJumping = false
+    @State private var isFixPosX = false
+    
     var body: some View {
         Image(uiImage: dinoCurrentImage)
             .resizable()
@@ -31,18 +33,31 @@ struct DinoView: View {
             }
             .onReceive(timer) { _ in
                 if dinoState == .jump {
-                    if dinoPosY > -229 && !isJumping{
+                    if dinoPosY > -192 && !isJumping{
                         dinoPosY -= 14
                         dinoPosX += 3.29
                     }
                     else if dinoPosY < -7 && isJumping{
                         dinoPosY += 14
-                        dinoPosX -= 0.29
+                        dinoPosX += 3.29
                     }
-                    if dinoPosY <= -229 {isJumping = true}
-                    if dinoPosY >= -7 && isJumping {
+                    
+                    
+                    if dinoPosY <= -192 {
+                        isJumping = true
+                        isFixPosX = false
+                    }
+                    else if dinoPosY >= -7 && isJumping {
                         isJumping = false
                         getDinoState(state: .walk)
+                    }
+                }
+                else if dinoState == .walk {
+                    if !isFixPosX {
+                        isFixPosX.toggle()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                            dinoPosX -= 1
+                        }
                     }
                 }
             }
@@ -55,11 +70,10 @@ extension DinoView{
         switch newDinoState {
         case .walk:
             dinoCurrentImage = UIImage(named: "\(dinoState.imageName)left")!
-            
+          
             withAnimation(.spring(response: 0.04).repeatForever()){
                 dinoCurrentImage = UIImage(named: "\(dinoState.imageName)right")!
             }
-            withAnimation(.spring()){dinoPosX = -129}
         case .jump:
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
             
