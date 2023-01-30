@@ -37,14 +37,19 @@ struct DinoView: View {
                 
                 
                 if dinoState == .jump {
-                    if dinoPosY > -207 && !isJumping{
-                        dinoPosY -= 7
-                       // dinoPosX += 3.29
-                    }
-                    else if dinoPosY > -100 && !isJumping{
+                    if dinoPosY > -92 && !isJumping{
                         dinoPosY -= 14
                        // dinoPosX += 3.29
                     }
+                    else if dinoPosY > -158 && !isJumping{
+                        dinoPosY -= 10
+                       // dinoPosX += 3.29
+                    }
+                    else if dinoPosY > -207 && !isJumping{
+                        dinoPosY -= 5
+                       // dinoPosX += 3.29
+                    }
+                    
                     else if dinoPosY < -7 && isJumping{
                         dinoPosY += 10
                        // dinoPosX += 3.29

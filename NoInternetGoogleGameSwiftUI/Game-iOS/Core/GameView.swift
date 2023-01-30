@@ -28,8 +28,8 @@ struct GameView: View {
 extension GameView {
     private var scoreLabel: some View {
         HStack{
-            Text("hello 00000")
-                .font(.custom("PressStart2P", size: 29))
+            Text("HI 0000")
+                .font(Font.custom("PressStart2P", size: 29))
         }
         .frame(maxWidth: 350, maxHeight: .infinity, alignment: .topTrailing)
         .padding()

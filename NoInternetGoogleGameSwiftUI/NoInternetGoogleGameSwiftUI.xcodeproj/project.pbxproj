@@ -224,8 +224,8 @@
 		AF337BF52972909C00450704 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				AF337BFE2972933900450704 /* PressStart2P.otf */,
 				AF337BF7297290DF00450704 /* PressStart2P.ttf */,
+				AF337BFE2972933900450704 /* PressStart2P.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -481,7 +481,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"Game-MacOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Game-MacOS/Preview\\ Content PressStart2P.ttf";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -563,7 +563,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Game-MacOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Game-MacOS/Preview\\ Content PressStart2P.ttf";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -636,7 +636,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"Game-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Shared/Sources/Fonts/PressStart2P.ttf Game-iOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -720,7 +720,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Game-iOS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Shared/Sources/Fonts/PressStart2P.ttf Game-iOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;

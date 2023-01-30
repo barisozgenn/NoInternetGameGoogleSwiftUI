@@ -4,8 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PressStart2P.otf</string>
-		<string>PressStart2P.ttf</string>
+		<string>Shared/Sources/Fonts/PressStart2P.ttf</string>
 	</array>
 </dict>
 </plist>
