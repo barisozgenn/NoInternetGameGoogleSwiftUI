@@ -17,33 +17,42 @@ struct DinoView: View {
     @State private var isFixPosX = false
     
     var body: some View {
-        Image(uiImage: dinoCurrentImage)
-            .resizable()
-            .scaledToFit()
-            .frame(maxHeight: 107)
-            .offset(x: dinoPosX, y: dinoPosY)
-            .onAppear{
-                getDinoState(state: dinoState)
-            }
-            .onChange(of: dinoState) { newDinoState in
-                getDinoState(state: newDinoState)
-            }
-            .onTapGesture {
-                getDinoState(state: .jump)
-            }
+        ZStack{
+            Image(uiImage: dinoCurrentImage)
+                .resizable()
+                .scaledToFit()
+                .frame(maxHeight: 107)
+                .offset(x: dinoPosX, y: dinoPosY)
+                .onAppear{
+                    getDinoState(state: dinoState)
+                }
+                .onChange(of: dinoState) { newDinoState in
+                    getDinoState(state: newDinoState)
+                }
+                .onTapGesture {
+                    getDinoState(state: .jump)
+                }
+        }
             .onReceive(timer) { _ in
+                
+                
                 if dinoState == .jump {
-                    if dinoPosY > -192 && !isJumping{
+                    if dinoPosY > -207 && !isJumping{
+                        dinoPosY -= 7
+                       // dinoPosX += 3.29
+                    }
+                    else if dinoPosY > -100 && !isJumping{
                         dinoPosY -= 14
-                        dinoPosX += 3.29
+                       // dinoPosX += 3.29
                     }
                     else if dinoPosY < -7 && isJumping{
-                        dinoPosY += 14
-                        dinoPosX += 3.29
+                        dinoPosY += 10
+                       // dinoPosX += 3.29
                     }
+                
                     
                     
-                    if dinoPosY <= -192 {
+                    if dinoPosY <= -207 {
                         isJumping = true
                         isFixPosX = false
                     }
@@ -55,9 +64,7 @@ struct DinoView: View {
                 else if dinoState == .walk {
                     if !isFixPosX {
                         isFixPosX.toggle()
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                            dinoPosX -= 1
-                        }
+                        
                     }
                 }
             }
