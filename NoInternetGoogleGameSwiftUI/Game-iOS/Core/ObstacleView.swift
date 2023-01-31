@@ -14,7 +14,8 @@ struct ObstacleView : View {
     let range = 92.0...192
     @State var changeIt = false
     @State var colliderHit = false
-    @State var getScore = false
+    @Binding var isGameStart : Bool
+    @Binding var getScore : Int
     let timer = Timer.publish(every: 0.007, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -28,6 +29,8 @@ struct ObstacleView : View {
                         .position(x: posXs[2], y: 96)
                     ObstaclePrefab(changeIt: $changeIt, posX: $posXs[3], colliderHit: $colliderHit, getScore: $getScore)
                         .position(x: posXs[3], y: 96)
+                    
+                    Text("\(posXs[0])\n\(posXs[1])\n\(posXs[2])\n\(posXs[3])\n")
                 }
                 .onAppear{
                     changeIt.toggle()
@@ -35,11 +38,15 @@ struct ObstacleView : View {
                    posXs = [posX, posX+258, posX+592, posX+900]
                 }
                 .onReceive(timer) { _ in
-                    posX -= 1
-                    posXs = [posX, posX+258, posX+592, posX+900]
                     
-                    if posX < -990 {
-                        posX = maxX
+                    if isGameStart && !colliderHit {
+                        
+                        posX -= 1
+                        posXs = [posX, posX+258, posX+592, posX+900]
+                        
+                        if posX < -990 {
+                            posX = maxX
+                        }
                     }
                 }
         .frame(width: 430,height: 192)
@@ -53,7 +60,7 @@ private struct ObstaclePrefab: View {
     @Binding var changeIt : Bool
     @Binding var posX : Double
     @Binding var colliderHit : Bool
-    @Binding var getScore : Bool
+    @Binding var getScore : Int
     let obstacleList =  ObstacleModel.allCases
 @State private var image = ""
     var body: some View {
@@ -73,10 +80,17 @@ private struct ObstaclePrefab: View {
             .onChange(of: changeIt, perform: { _ in
                 image = obstacleList[obstacleList.indices.randomElement()!].imageName
             })
+            .onChange(of: posX) { newPosX in
+                if !colliderHit && posX == 29 {
+                    withAnimation(.spring()){
+                        getScore += 14
+                    }
+                }
+            }
     }
 }
 struct ObstacleView_Previews: PreviewProvider {
     static var previews: some View {
-        ObstacleView().offset(x: 0, y: 0)
+        ObstacleView( isGameStart: .constant(false), getScore: .constant(0)).offset(x: 0, y: 0)
     }
 }

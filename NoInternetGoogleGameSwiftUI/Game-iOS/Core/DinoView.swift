@@ -15,7 +15,7 @@ struct DinoView: View {
     let timer = Timer.publish(every: 0.0258, on: .main, in: .common).autoconnect()
     @State private var isJumping = false
     @State private var isFixPosX = false
-    
+    @Binding var isGameStart : Bool
     var body: some View {
         ZStack{
             Image(uiImage: dinoCurrentImage)
@@ -31,6 +31,7 @@ struct DinoView: View {
                 }
                 .onTapGesture {
                     getDinoState(state: .jump)
+                    isGameStart = true
                 }
         }
             .onReceive(timer) { _ in
@@ -98,6 +99,6 @@ extension DinoView{
 }
 struct DinoView_Previews: PreviewProvider {
     static var previews: some View {
-        DinoView()
+        DinoView(isGameStart: .constant(false))
     }
 }
