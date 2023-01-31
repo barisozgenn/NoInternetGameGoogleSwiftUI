@@ -12,16 +12,19 @@ struct GameView: View {
     @State private var score = 0
     @State var getScore = 0
     @State var isGameStart : Bool = false
+    @State var dinoPosY = 0.0
+    @State var dinoState : DinoStateModel = .walk
+    
     var body: some View {
         ZStack{
             CloudsView()
-            ObstacleView(isGameStart: $isGameStart, getScore: $getScore)
+            ObstacleView(isGameStart: $isGameStart, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
                 .offset(y: -39)
             scoreLabel
             
-            GroundView()
+            GroundView(dinoState: $dinoState)
                 .offset(y: 39)
-            DinoView(isGameStart: $isGameStart)
+            DinoView(dinoPosY: $dinoPosY, dinoState: $dinoState, isGameStart: $isGameStart)
         
         }
     }

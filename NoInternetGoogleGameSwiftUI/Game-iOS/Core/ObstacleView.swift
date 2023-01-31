@@ -16,18 +16,21 @@ struct ObstacleView : View {
     @State var colliderHit = false
     @Binding var isGameStart : Bool
     @Binding var getScore : Int
+    @Binding var dinoPosY : Double
+    @Binding var dinoState : DinoStateModel
+
     let timer = Timer.publish(every: 0.007, on: .main, in: .common).autoconnect()
     
     var body: some View {
         
         ZStack{
-            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[0], colliderHit: $colliderHit, getScore: $getScore)
+            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[0], colliderHit: $colliderHit, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
                 .position(x: posXs[0], y: 96)
-            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[1], colliderHit: $colliderHit, getScore: $getScore)
+            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[1], colliderHit: $colliderHit, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
                 .position(x: posXs[1], y: 96)
-            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[2], colliderHit: $colliderHit, getScore: $getScore)
+            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[2], colliderHit: $colliderHit, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
                 .position(x: posXs[2], y: 96)
-            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[3], colliderHit: $colliderHit, getScore: $getScore)
+            ObstaclePrefab(changeIt: $changeIt, posX: $posXs[3], colliderHit: $colliderHit, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
                 .position(x: posXs[3], y: 96)
             
             /*Text("\(posXs[0])\n\(posXs[1])\n\(posXs[2])\n\(posXs[3])\n")*/
@@ -65,6 +68,8 @@ private struct ObstaclePrefab: View {
     @Binding var posX : Double
     @Binding var colliderHit : Bool
     @Binding var getScore : Int
+    @Binding var dinoPosY : Double
+    @Binding var dinoState : DinoStateModel
     let obstacleList =  ObstacleModel.allCases
     @State private var image = ""
     var body: some View {
@@ -85,16 +90,21 @@ private struct ObstaclePrefab: View {
             image = obstacleList[obstacleList.indices.randomElement()!].imageName
         })
         .onChange(of: posX) { newPosX in
+            if dinoPosY < 92 && posX > 0 && posX < 100 {
+                colliderHit = true
+                dinoState = .gameOver
+            }
             if !colliderHit && posX == 29 {
                 withAnimation(.spring()){
                     getScore += 14
                 }
             }
+            
         }
     }
 }
 struct ObstacleView_Previews: PreviewProvider {
     static var previews: some View {
-        ObstacleView( isGameStart: .constant(false), getScore: .constant(0)).offset(x: 0, y: 0)
+        ObstacleView( isGameStart: .constant(false), getScore: .constant(0), dinoPosY: .constant(0), dinoState: .constant(.walk)).offset(x: 0, y: 0)
     }
 }

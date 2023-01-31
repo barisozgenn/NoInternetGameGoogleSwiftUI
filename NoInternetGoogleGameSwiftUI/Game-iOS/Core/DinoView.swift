@@ -9,9 +9,9 @@ import SwiftUI
 
 struct DinoView: View {
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
-    @State var dinoPosY = 0.0
+    @Binding var dinoPosY: Double
     @State var dinoPosX = -129.0
-    @State var dinoState : DinoStateModel = .walk
+    @Binding var dinoState : DinoStateModel
     let timer = Timer.publish(every: 0.0258, on: .main, in: .common).autoconnect()
     @State private var isJumping = false
     @State private var isFixPosX = false
@@ -89,7 +89,6 @@ extension DinoView{
             }
         case .jump:
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
-            
         default:
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
         }
@@ -99,6 +98,6 @@ extension DinoView{
 }
 struct DinoView_Previews: PreviewProvider {
     static var previews: some View {
-        DinoView(isGameStart: .constant(false))
+        DinoView(dinoPosY: .constant(0), dinoState: .constant(.walk), isGameStart: .constant(false))
     }
 }

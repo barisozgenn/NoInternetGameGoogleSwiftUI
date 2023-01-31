@@ -23,7 +23,7 @@ enum DinoStateModel : Int, CaseIterable, Identifiable {
         case .walk:
             return "dino-walk-"
         case .gameOver:
-            return "dino-fail"
+            return "dino-idle-fail"
         case .jump:
             return "dino-idle"//"dino-idle-noeye"
         }
