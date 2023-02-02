@@ -24,7 +24,7 @@ struct GroundView: View {
             .clipped()
             .onAppear{
                 withAnimation(.linear(duration: 12.9).repeatForever(autoreverses: false)){
-                    if dinoState != .gameOver { groundPosX = -900 }
+                    groundPosX = -900
                 }
             }
         }else {
@@ -33,7 +33,7 @@ struct GroundView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 2900)
-                    .offset(x: dinoState != .gameOver ? groundPosX : 29)
+                    .offset(x: 29)
             }
             .frame(width: 429)
             .clipped()

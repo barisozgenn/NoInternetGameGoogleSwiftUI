@@ -72,6 +72,7 @@ private struct ObstaclePrefab: View {
     @Binding var dinoState : DinoStateModel
     let obstacleList =  ObstacleModel.allCases
     @State private var image = ""
+    
     var body: some View {
         HStack(alignment: .bottom){
             Image(image)
@@ -82,7 +83,10 @@ private struct ObstaclePrefab: View {
                 Rectangle()
                     .foregroundColor(.clear)
                     .frame(width: 29,height: 192)
-                //Text("\(String(format: "%.0f",posX))")
+                Text("\(String(format: "%.0f",posX))\n\(String(format: "%.0f",dinoPosY))")
+                
+                Rectangle().frame(width: 32, height: 107)
+                    .offset(y: dinoPosY)
             }
         }
         //.background(.yellow)
@@ -90,13 +94,14 @@ private struct ObstaclePrefab: View {
             image = obstacleList[obstacleList.indices.randomElement()!].imageName
         })
         .onChange(of: posX) { newPosX in
-            if dinoPosY < 92 && posX > 0 && posX < 100 {
+            if dinoPosY > -40 && posX > 29 && posX < 114 {
                 colliderHit = true
                 dinoState = .gameOver
             }
             if !colliderHit && posX == 29 {
+                let getRandomScore = Int.random(in: 7..<29)
                 withAnimation(.spring()){
-                    getScore += 14
+                    getScore += getRandomScore
                 }
             }
             
@@ -105,6 +110,6 @@ private struct ObstaclePrefab: View {
 }
 struct ObstacleView_Previews: PreviewProvider {
     static var previews: some View {
-        ObstacleView( isGameStart: .constant(false), getScore: .constant(0), dinoPosY: .constant(0), dinoState: .constant(.walk)).offset(x: 0, y: 0)
+        ObstacleView( isGameStart: .constant(true), getScore: .constant(0), dinoPosY: .constant(-40), dinoState: .constant(.walk)).offset(x: 0, y: 0)
     }
 }

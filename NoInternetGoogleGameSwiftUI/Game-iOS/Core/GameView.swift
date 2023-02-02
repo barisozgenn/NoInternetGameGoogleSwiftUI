@@ -25,7 +25,7 @@ struct GameView: View {
             GroundView(dinoState: $dinoState)
                 .offset(y: 39)
             DinoView(dinoPosY: $dinoPosY, dinoState: $dinoState, isGameStart: $isGameStart)
-        
+            replayButton
         }
     }
 }
@@ -38,6 +38,22 @@ extension GameView {
         .frame(maxWidth: 350, maxHeight: .infinity, alignment: .topTrailing)
         .padding()
         .zIndex(1)
+    }
+    private var replayButton: some View {
+        Button {
+            dinoPosY = -7
+            dinoState = .walk
+            isGameStart = true
+            score = 0
+            getScore = 0
+        } label: {
+            Image("btn-play-again")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 72)
+                .offset(y: 192)
+        }
+
     }
 }
 struct GameView_Previews: PreviewProvider {
