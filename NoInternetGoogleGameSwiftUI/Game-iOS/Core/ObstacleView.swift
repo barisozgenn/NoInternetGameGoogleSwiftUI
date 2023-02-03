@@ -13,7 +13,7 @@ struct ObstacleView : View {
     @State var speed: Double = 15.0
     let range = 92.0...192
     @State var changeIt = false
-    @State var colliderHit = false
+    @Binding var colliderHit: Bool
     @Binding var isGameStart : Bool
     @Binding var getScore : Int
     @Binding var dinoPosY : Double
@@ -53,8 +53,10 @@ struct ObstacleView : View {
             }
         }
         .onChange(of: colliderHit, perform: { newValue in
-            posX = maxX
-            posXs = [posX, posX+258, posX+592, posX+900]
+            if newValue == false {
+                posX = maxX
+                posXs = [posX, posX+258, posX+592, posX+900]
+            }
         })
         .frame(width: 430,height: 192)
         .clipped()
@@ -110,6 +112,6 @@ private struct ObstaclePrefab: View {
 }
 struct ObstacleView_Previews: PreviewProvider {
     static var previews: some View {
-        ObstacleView( isGameStart: .constant(true), getScore: .constant(0), dinoPosY: .constant(-40), dinoState: .constant(.walk)).offset(x: 0, y: 0)
+        ObstacleView( colliderHit: .constant(false), isGameStart: .constant(true), getScore: .constant(0), dinoPosY: .constant(-40), dinoState: .constant(.walk)).offset(x: 0, y: 0)
     }
 }

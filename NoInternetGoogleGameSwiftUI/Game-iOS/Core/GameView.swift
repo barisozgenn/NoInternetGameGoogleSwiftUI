@@ -14,11 +14,12 @@ struct GameView: View {
     @State var isGameStart : Bool = false
     @State var dinoPosY = 0.0
     @State var dinoState : DinoStateModel = .walk
-    
+    @State var colliderHit = false
+
     var body: some View {
         ZStack{
             CloudsView()
-            ObstacleView(isGameStart: $isGameStart, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
+            ObstacleView(colliderHit: $colliderHit, isGameStart: $isGameStart, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
                 .offset(y: -39)
             scoreLabel
             
@@ -26,6 +27,7 @@ struct GameView: View {
                 .offset(y: 39)
             DinoView(dinoPosY: $dinoPosY, dinoState: $dinoState, isGameStart: $isGameStart)
             replayButton
+                
         }
     }
 }
@@ -40,19 +42,25 @@ extension GameView {
         .zIndex(1)
     }
     private var replayButton: some View {
-        Button {
-            dinoPosY = -7
-            dinoState = .walk
-            isGameStart = true
-            score = 0
-            getScore = 0
-        } label: {
-            Image("btn-play-again")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 72)
-                .offset(y: 192)
+        VStack{
+            Spacer()
+            Button {
+                dinoPosY = -7
+                dinoState = .walk
+                colliderHit = false
+                isGameStart = true
+                score = 0
+                getScore = 0
+                
+            } label: {
+                
+                Image("btn-play-again")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 72)
+            }
         }
+        
 
     }
 }

@@ -12,13 +12,20 @@ struct GroundView: View {
     @Binding var dinoState : DinoStateModel
     
     var body: some View {
-        if dinoState != .gameOver {
-            HStack{
+        
+            ZStack{
                 Image("way")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 2900)
                     .offset(x: groundPosX)
+                    .opacity(dinoState != .gameOver ? 1 : 0)
+                Image("way")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 2900)
+                    .offset(x: 29)
+                .opacity(dinoState != .gameOver ? 0 : 1)
             }
             .frame(width: 429)
             .clipped()
@@ -27,17 +34,6 @@ struct GroundView: View {
                     groundPosX = -900
                 }
             }
-        }else {
-            HStack{
-                Image("way")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 2900)
-                    .offset(x: 29)
-            }
-            .frame(width: 429)
-            .clipped()
-        }
     }
 }
 
