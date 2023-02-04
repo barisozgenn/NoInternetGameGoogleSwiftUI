@@ -87,8 +87,8 @@ private struct ObstaclePrefab: View {
                     .frame(width: 29,height: 192)
                 Text("\(String(format: "%.0f",posX))\n\(String(format: "%.0f",dinoPosY))")
                 
-                Rectangle().frame(width: 32, height: 107)
-                    .offset(y: dinoPosY)
+                /*Rectangle().frame(width: 32, height: 107)
+                    .offset(y: dinoPosY)*/
             }
         }
         //.background(.yellow)
@@ -96,7 +96,7 @@ private struct ObstaclePrefab: View {
             image = obstacleList[obstacleList.indices.randomElement()!].imageName
         })
         .onChange(of: posX) { newPosX in
-            if dinoPosY > -40 && posX > 29 && posX < 114 {
+            if dinoPosY > -40 && posX > 129 && posX < 140 {
                 colliderHit = true
                 dinoState = .gameOver
             }
