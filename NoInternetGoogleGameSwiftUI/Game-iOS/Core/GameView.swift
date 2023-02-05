@@ -35,7 +35,9 @@ extension GameView {
     private var scoreLabel: some View {
         HStack{
             Text("HI \(String(format: "%.5d", getScore))")
-                .font(Font.custom("RegularRockwell", size: 29))
+                .font(.title2)
+                .fontWeight(.bold)
+                .foregroundColor(Color(.darkGray))
         }
         .frame(maxWidth: 350, maxHeight: .infinity, alignment: .topTrailing)
         .padding()

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF2DE14D298FBC82000CCFCE /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE343B29824D89005B0D26 /* GroundView.swift */; };
+		AF2DE14E298FBC84000CCFCE /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE343B29824D89005B0D26 /* GroundView.swift */; };
 		AF337BA629727CD700450704 /* Game_MacOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BA529727CD700450704 /* Game_MacOSApp.swift */; };
 		AF337BA829727CD700450704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BA729727CD700450704 /* ContentView.swift */; };
 		AF337BAA29727CD800450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
@@ -139,6 +141,10 @@
 		AF337B9D29727C0F00450704 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				AFD91487297FCC2C00436337 /* ObstacleView.swift */,
+				AFE0C73D298121B3006CA463 /* DinoView.swift */,
+				AFE0C7412981293C006CA463 /* CloudsView.swift */,
+				AFDE343B29824D89005B0D26 /* GroundView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -242,10 +248,6 @@
 			isa = PBXGroup;
 			children = (
 				AF337BBB2972824600450704 /* GameView.swift */,
-				AFD91487297FCC2C00436337 /* ObstacleView.swift */,
-				AFE0C73D298121B3006CA463 /* DinoView.swift */,
-				AFE0C7412981293C006CA463 /* CloudsView.swift */,
-				AFDE343B29824D89005B0D26 /* GroundView.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -392,6 +394,7 @@
 				AFD91488297FCC2C00436337 /* ObstacleView.swift in Sources */,
 				AF337BA629727CD700450704 /* Game_MacOSApp.swift in Sources */,
 				AFE0C73E298121B3006CA463 /* DinoView.swift in Sources */,
+				AF2DE14E298FBC84000CCFCE /* GroundView.swift in Sources */,
 				AF535615297D5F80005C8083 /* DinoStateModel.swift in Sources */,
 				AFE0C7422981293C006CA463 /* CloudsView.swift in Sources */,
 			);
@@ -421,6 +424,7 @@
 				AFD9148A297FCC2C00436337 /* ObstacleView.swift in Sources */,
 				AF337BE8297282C100450704 /* Game_watchOSApp.swift in Sources */,
 				AFE0C740298121B3006CA463 /* DinoView.swift in Sources */,
+				AF2DE14D298FBC82000CCFCE /* GroundView.swift in Sources */,
 				AF535617297D5F80005C8083 /* DinoStateModel.swift in Sources */,
 				AFE0C7442981293C006CA463 /* CloudsView.swift in Sources */,
 			);
