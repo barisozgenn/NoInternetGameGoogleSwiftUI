@@ -44,20 +44,28 @@ extension GameView {
     private var replayButton: some View {
         VStack{
             Spacer()
-            Button {
-                dinoPosY = -7
-                dinoState = .walk
-                colliderHit = false
-                isGameStart = true
-                score = 0
-                getScore = 0
-                
-            } label: {
-                
-                Image("btn-play-again")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 72)
+            if dinoState == .gameOver {
+                Button {
+                    dinoPosY = -7
+                    dinoState = .walk
+                    colliderHit = false
+                    isGameStart = true
+                    score = 0
+                    getScore = 0
+                    
+                } label: {
+                    VStack{
+                        
+                        Image("btn-play-again")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 72)
+                        Text("play again".uppercased())
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                            .fontWeight(.bold)
+                    }
+                }
             }
         }
         

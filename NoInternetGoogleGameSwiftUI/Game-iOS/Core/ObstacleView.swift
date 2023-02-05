@@ -86,6 +86,7 @@ private struct ObstaclePrefab: View {
                     .foregroundColor(.clear)
                     .frame(width: 29,height: 192)
                 Text("\(String(format: "%.0f",posX))\n\(String(format: "%.0f",dinoPosY))")
+                    .opacity(0)
                 
                 /*Rectangle().frame(width: 32, height: 107)
                     .offset(y: dinoPosY)*/

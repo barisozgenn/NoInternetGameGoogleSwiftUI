@@ -30,8 +30,10 @@ struct DinoView: View {
                     getDinoState(state: newDinoState)
                 }
                 .onTapGesture {
-                    getDinoState(state: .jump)
-                    isGameStart = true
+                    if dinoState == .walk {
+                        getDinoState(state: .jump)
+                        isGameStart = true
+                    }
                 }
         }
             .onReceive(timer) { _ in
