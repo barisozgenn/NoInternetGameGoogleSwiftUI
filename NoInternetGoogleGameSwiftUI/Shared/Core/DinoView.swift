@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct DinoView: View {
+    #if os(macOS)
+    @State private var dinoCurrentImage = NSImage(named: "dino-idle")!
+    #else
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
+    #endif
     @Binding var dinoPosY: Double
     @State var dinoPosX = -129.0
     @Binding var dinoState : DinoStateModel
@@ -18,10 +22,7 @@ struct DinoView: View {
     @Binding var isGameStart : Bool
     var body: some View {
         ZStack{
-            Image(uiImage: dinoCurrentImage)
-                .resizable()
-                .scaledToFit()
-                .frame(maxHeight: 107)
+            dinoImageView
                 .offset(x: dinoPosX, y: dinoPosY)
                 .onAppear{
                     getDinoState(state: dinoState)
@@ -79,6 +80,37 @@ struct DinoView: View {
     }
 }
 extension DinoView{
+#if os(macOS)
+    private var dinoImageView: some View {
+        #if os(macOS)
+        Image(nsImage: dinoCurrentImage)
+            .resizable()
+            .scaledToFit()
+            .frame(maxHeight: 107)
+        #else
+        Image(uiImage: dinoCurrentImage)
+            .resizable()
+            .scaledToFit()
+            .frame(maxHeight: 107)
+        #endif
+    }
+    func getDinoState(state newDinoState: DinoStateModel){
+        dinoState = newDinoState
+        
+        switch newDinoState {
+        case .walk:
+            dinoCurrentImage = NSImage(named: "\(dinoState.imageName)left")!
+          
+            withAnimation(.spring(response: 0.04).repeatForever()){
+                dinoCurrentImage = NSImage(named: "\(dinoState.imageName)right")!
+            }
+        case .jump:
+            dinoCurrentImage = NSImage(named: newDinoState.imageName)!
+        default:
+            dinoCurrentImage = NSImage(named: newDinoState.imageName)!
+        }
+    }
+    #else
     func getDinoState(state newDinoState: DinoStateModel){
         dinoState = newDinoState
         
@@ -95,7 +127,7 @@ extension DinoView{
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
         }
     }
-    
+    #endif
     
 }
 struct DinoView_Previews: PreviewProvider {

@@ -10,7 +10,6 @@
 		AF2DE14D298FBC82000CCFCE /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE343B29824D89005B0D26 /* GroundView.swift */; };
 		AF2DE14E298FBC84000CCFCE /* GroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFDE343B29824D89005B0D26 /* GroundView.swift */; };
 		AF337BA629727CD700450704 /* Game_MacOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BA529727CD700450704 /* Game_MacOSApp.swift */; };
-		AF337BA829727CD700450704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BA729727CD700450704 /* ContentView.swift */; };
 		AF337BAA29727CD800450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
 		AF337BAD29727CD800450704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BAC29727CD800450704 /* Preview Assets.xcassets */; };
 		AF337BBA2972824600450704 /* Game_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BB92972824600450704 /* Game_iOSApp.swift */; };
@@ -34,6 +33,8 @@
 		AF535619297D60F2005C8083 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
 		AF53561A297D60F2005C8083 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
 		AF53561B297D60F2005C8083 /* ObstacleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535618297D60F2005C8083 /* ObstacleModel.swift */; };
+		AF9B6C802990F28D0079E20F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B6C7F2990F28D0079E20F /* GameView.swift */; };
+		AF9B6C8229915A6B0079E20F /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9B6C8129915A6B0079E20F /* GameView.swift */; };
 		AFD91488297FCC2C00436337 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
 		AFD91489297FCC2C00436337 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
 		AFD9148A297FCC2C00436337 /* ObstacleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91487297FCC2C00436337 /* ObstacleView.swift */; };
@@ -49,7 +50,6 @@
 /* Begin PBXFileReference section */
 		AF337BA229727CD700450704 /* Game-MacOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-MacOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF337BA529727CD700450704 /* Game_MacOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_MacOSApp.swift; sourceTree = "<group>"; };
-		AF337BA729727CD700450704 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF337BA929727CD800450704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF337BAC29727CD800450704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF337BAE29727CD800450704 /* Game_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Game_MacOS.entitlements; sourceTree = "<group>"; };
@@ -69,6 +69,8 @@
 		AF337BFE2972933900450704 /* PressStart2P.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.otf; sourceTree = "<group>"; };
 		AF535614297D5F80005C8083 /* DinoStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoStateModel.swift; sourceTree = "<group>"; };
 		AF535618297D60F2005C8083 /* ObstacleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleModel.swift; sourceTree = "<group>"; };
+		AF9B6C7F2990F28D0079E20F /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		AF9B6C8129915A6B0079E20F /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		AFD91487297FCC2C00436337 /* ObstacleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleView.swift; sourceTree = "<group>"; };
 		AFDE343B29824D89005B0D26 /* GroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundView.swift; sourceTree = "<group>"; };
 		AFE0C73D298121B3006CA463 /* DinoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoView.swift; sourceTree = "<group>"; };
@@ -164,9 +166,9 @@
 			children = (
 				AF337BFD2972914000450704 /* Info.plist */,
 				AF337BA529727CD700450704 /* Game_MacOSApp.swift */,
-				AF337BA729727CD700450704 /* ContentView.swift */,
 				AF337BAE29727CD800450704 /* Game_MacOS.entitlements */,
 				AF337BAB29727CD800450704 /* Preview Content */,
+				AF9B6C8129915A6B0079E20F /* GameView.swift */,
 			);
 			path = "Game-MacOS";
 			sourceTree = "<group>";
@@ -215,6 +217,7 @@
 				AF337BE9297282C100450704 /* ContentView.swift */,
 				AF337BEB297282C200450704 /* Assets.xcassets */,
 				AF337BED297282C200450704 /* Preview Content */,
+				AF9B6C7F2990F28D0079E20F /* GameView.swift */,
 			);
 			path = "Game-watchOS";
 			sourceTree = "<group>";
@@ -390,9 +393,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF535619297D60F2005C8083 /* ObstacleModel.swift in Sources */,
-				AF337BA829727CD700450704 /* ContentView.swift in Sources */,
 				AFD91488297FCC2C00436337 /* ObstacleView.swift in Sources */,
 				AF337BA629727CD700450704 /* Game_MacOSApp.swift in Sources */,
+				AF9B6C8229915A6B0079E20F /* GameView.swift in Sources */,
 				AFE0C73E298121B3006CA463 /* DinoView.swift in Sources */,
 				AF2DE14E298FBC84000CCFCE /* GroundView.swift in Sources */,
 				AF535615297D5F80005C8083 /* DinoStateModel.swift in Sources */,
@@ -423,6 +426,7 @@
 				AF337BEA297282C100450704 /* ContentView.swift in Sources */,
 				AFD9148A297FCC2C00436337 /* ObstacleView.swift in Sources */,
 				AF337BE8297282C100450704 /* Game_watchOSApp.swift in Sources */,
+				AF9B6C802990F28D0079E20F /* GameView.swift in Sources */,
 				AFE0C740298121B3006CA463 /* DinoView.swift in Sources */,
 				AF2DE14D298FBC82000CCFCE /* GroundView.swift in Sources */,
 				AF535617297D5F80005C8083 /* DinoStateModel.swift in Sources */,
