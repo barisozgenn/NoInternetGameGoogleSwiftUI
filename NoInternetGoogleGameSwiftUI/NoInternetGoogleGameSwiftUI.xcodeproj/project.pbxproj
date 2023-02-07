@@ -21,12 +21,6 @@
 		AF337BEF297282C200450704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BEE297282C200450704 /* Preview Assets.xcassets */; };
 		AF337BF3297285CD00450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
 		AF337BF4297285CD00450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
-		AF337BF8297290DF00450704 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BF7297290DF00450704 /* PressStart2P.ttf */; };
-		AF337BF9297290DF00450704 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BF7297290DF00450704 /* PressStart2P.ttf */; };
-		AF337BFA297290DF00450704 /* PressStart2P.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BF7297290DF00450704 /* PressStart2P.ttf */; };
-		AF337BFF2972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
-		AF337C002972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
-		AF337C012972933900450704 /* PressStart2P.otf in Resources */ = {isa = PBXBuildFile; fileRef = AF337BFE2972933900450704 /* PressStart2P.otf */; };
 		AF535615297D5F80005C8083 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
 		AF535616297D5F80005C8083 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
 		AF535617297D5F80005C8083 /* DinoStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF535614297D5F80005C8083 /* DinoStateModel.swift */; };
@@ -62,11 +56,9 @@
 		AF337BE9297282C100450704 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF337BEB297282C200450704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF337BEE297282C200450704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AF337BF7297290DF00450704 /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.ttf; sourceTree = "<group>"; };
 		AF337BFB2972911F00450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AF337BFC2972913100450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF337BFD2972914000450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		AF337BFE2972933900450704 /* PressStart2P.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PressStart2P.otf; sourceTree = "<group>"; };
 		AF535614297D5F80005C8083 /* DinoStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoStateModel.swift; sourceTree = "<group>"; };
 		AF535618297D60F2005C8083 /* ObstacleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleModel.swift; sourceTree = "<group>"; };
 		AF9B6C7F2990F28D0079E20F /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -184,7 +176,6 @@
 		AF337BB22972819C00450704 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AF337BF52972909C00450704 /* Fonts */,
 				AF337BA929727CD800450704 /* Assets.xcassets */,
 			);
 			path = Sources;
@@ -228,15 +219,6 @@
 				AF337BEE297282C200450704 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		AF337BF52972909C00450704 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				AF337BF7297290DF00450704 /* PressStart2P.ttf */,
-				AF337BFE2972933900450704 /* PressStart2P.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		AFC8FA76297C22B3001BC61B /* App */ = {
@@ -355,8 +337,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF337BFF2972933900450704 /* PressStart2P.otf in Resources */,
-				AF337BF8297290DF00450704 /* PressStart2P.ttf in Resources */,
 				AF337BAD29727CD800450704 /* Preview Assets.xcassets in Resources */,
 				AF337BAA29727CD800450704 /* Assets.xcassets in Resources */,
 			);
@@ -366,8 +346,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF337C002972933900450704 /* PressStart2P.otf in Resources */,
-				AF337BF9297290DF00450704 /* PressStart2P.ttf in Resources */,
 				AF337BF3297285CD00450704 /* Assets.xcassets in Resources */,
 				AF337BC12972824700450704 /* Preview Assets.xcassets in Resources */,
 			);
@@ -377,9 +355,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF337C012972933900450704 /* PressStart2P.otf in Resources */,
 				AF337BEF297282C200450704 /* Preview Assets.xcassets in Resources */,
-				AF337BFA297290DF00450704 /* PressStart2P.ttf in Resources */,
 				AF337BF4297285CD00450704 /* Assets.xcassets in Resources */,
 				AF337BEC297282C200450704 /* Assets.xcassets in Resources */,
 			);
@@ -489,7 +465,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "Game-MacOS/Preview\\ Content PressStart2P.ttf";
+				DEVELOPMENT_ASSET_PATHS = "Game-MacOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -571,7 +547,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "Game-MacOS/Preview\\ Content PressStart2P.ttf";
+				DEVELOPMENT_ASSET_PATHS = "Game-MacOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -644,7 +620,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "Shared/Sources/Fonts/PressStart2P.ttf Game-iOS/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Game-iOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -728,7 +704,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "Shared/Sources/Fonts/PressStart2P.ttf Game-iOS/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "Game-iOS/Preview\\ Content";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
