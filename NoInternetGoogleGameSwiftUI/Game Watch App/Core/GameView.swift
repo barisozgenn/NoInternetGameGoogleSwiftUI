@@ -82,7 +82,7 @@ extension GameView {
     private var playLabel: some View {
         VStack{
             
-            Text("Tap Space".uppercased())
+            Text("Touch Dino".uppercased())
             Text("to Play")
                 .font(.title2)
                 .foregroundColor(.gray)
