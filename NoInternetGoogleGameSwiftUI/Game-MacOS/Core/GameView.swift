@@ -9,14 +9,15 @@ import SwiftUI
 
 
 struct GameView: View {
-   
+    
     @State private var score = 0
     @State var getScore = 0
     @State var isGameStart : Bool = false
     @State var dinoPosY = 0.0
     @State var dinoState : DinoStateModel = .walk
     @State var colliderHit = false
-
+    @State private var playLabelOpacity = 1.0
+    
     var body: some View {
         ZStack{
             CloudsView()
@@ -31,7 +32,7 @@ struct GameView: View {
                 .offset(y: 42)
             replayButton
                 .offset(y: -29)
-                
+            playLabel
         }
     }
 }
@@ -51,7 +52,7 @@ extension GameView {
         VStack{
             Spacer()
             if dinoState == .gameOver {
-                Button {
+                Button { 
                     dinoPosY = -7
                     dinoState = .walk
                     colliderHit = false
@@ -72,10 +73,26 @@ extension GameView {
                             .fontWeight(.bold)
                     }
                 }
+                .padding()
             }
         }
-        
-
+    }
+    
+    private var playLabel: some View {
+        VStack{
+            
+            Text("Tap Space".uppercased())
+            Text("to Play")
+                .font(.title2)
+                .foregroundColor(.gray)
+                .fontWeight(.bold)
+        }
+        .opacity(playLabelOpacity)
+        .onAppear{
+            withAnimation(.spring().delay(2)){
+                playLabelOpacity = 0.0
+            }
+        }
     }
 }
 struct GameView_Previews: PreviewProvider {

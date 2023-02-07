@@ -15,7 +15,6 @@ struct GameView: View {
     @State var dinoPosY = 0.0
     @State var dinoState : DinoStateModel = .walk
     @State var colliderHit = false
-
     var body: some View {
         ZStack{
             CloudsView()
@@ -27,7 +26,6 @@ struct GameView: View {
                 .offset(y: 39)
             DinoView(dinoPosY: $dinoPosY, dinoState: $dinoState, isGameStart: $isGameStart)
             replayButton
-                
         }
     }
 }
@@ -73,6 +71,7 @@ extension GameView {
         
 
     }
+    
 }
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {

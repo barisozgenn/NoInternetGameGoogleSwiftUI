@@ -26,15 +26,20 @@ struct DinoView: View {
                 .offset(x: dinoPosX, y: dinoPosY)
                 .onAppear{
                     getDinoState(state: dinoState)
+#if os(macOS)
+                    getDinoState(state: .jump)
+#endif
                 }
                 .onChange(of: dinoState) { newDinoState in
                     getDinoState(state: newDinoState)
                 }
                 .onTapGesture {
+#if !os(macOS)
                     if dinoState == .walk {
                         getDinoState(state: .jump)
                         isGameStart = true
                     }
+#endif
                 }
         }
         .onReceive(timer) { _ in
@@ -83,10 +88,21 @@ extension DinoView{
     
     private var dinoImageView: some View {
 #if os(macOS)
-        Image(nsImage: dinoCurrentImage)
-            .resizable()
-            .scaledToFit()
-            .frame(maxHeight: 107)
+        Button{
+            if dinoState == .walk {
+                getDinoState(state: .jump)
+                isGameStart = true
+            }
+        } label: {
+            Image(nsImage: dinoCurrentImage)
+                .resizable()
+                .scaledToFit()
+                .frame(maxHeight: 107)
+        }
+        .keyboardShortcut(.space, modifiers: [])
+        .frame(maxHeight: 107)
+        .buttonStyle(.plain)
+        
 #else
         Image(uiImage: dinoCurrentImage)
             .resizable()
