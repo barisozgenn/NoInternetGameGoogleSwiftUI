@@ -34,7 +34,7 @@ struct GameView: View {
                 .offset(y: -29)
             playLabel
         }
-        .scaleEffect(0.5)
+        .scaleEffect(0.54)
     }
 }
 extension GameView {
