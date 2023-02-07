@@ -20,14 +20,17 @@ struct GameView: View {
     var body: some View {
         ZStack{
             CloudsView()
+                .offset(y: 114)
             ObstacleView(colliderHit: $colliderHit, isGameStart: $isGameStart, getScore: $getScore, dinoPosY: $dinoPosY, dinoState: $dinoState)
-                .offset(y: -39)
+                .offset(y: 0)
             scoreLabel
             
             GroundView(dinoState: $dinoState)
-                .offset(y: 39)
+                .offset(y: 72)
             DinoView(dinoPosY: $dinoPosY, dinoState: $dinoState, isGameStart: $isGameStart)
+                .offset(y: 42)
             replayButton
+                .offset(y: -29)
                 
         }
     }

@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct DinoView: View {
-    #if os(macOS)
+#if os(macOS)
     @State private var dinoCurrentImage = NSImage(named: "dino-idle")!
-    #else
+#else
     @State private var dinoCurrentImage = UIImage(named: "dino-idle")!
-    #endif
+#endif
     @Binding var dinoPosY: Double
     @State var dinoPosX = -129.0
     @Binding var dinoState : DinoStateModel
@@ -37,70 +37,71 @@ struct DinoView: View {
                     }
                 }
         }
-            .onReceive(timer) { _ in
-                
-                
-                if dinoState == .jump {
-                    if dinoPosY > -92 && !isJumping{
-                        dinoPosY -= 14
-                       // dinoPosX += 3.29
-                    }
-                    else if dinoPosY > -158 && !isJumping{
-                        dinoPosY -= 10
-                       // dinoPosX += 3.29
-                    }
-                    else if dinoPosY > -207 && !isJumping{
-                        dinoPosY -= 5
-                       // dinoPosX += 3.29
-                    }
-                    
-                    else if dinoPosY < -7 && isJumping{
-                        dinoPosY += 10
-                       // dinoPosX += 3.29
-                    }
-                
-                    
-                    
-                    if dinoPosY <= -207 {
-                        isJumping = true
-                        isFixPosX = false
-                    }
-                    else if dinoPosY >= -7 && isJumping {
-                        isJumping = false
-                        getDinoState(state: .walk)
-                    }
+        .onReceive(timer) { _ in
+            
+            
+            if dinoState == .jump {
+                if dinoPosY > -92 && !isJumping{
+                    dinoPosY -= 14
+                    // dinoPosX += 3.29
                 }
-                else if dinoState == .walk {
-                    if !isFixPosX {
-                        isFixPosX.toggle()
-                        
-                    }
+                else if dinoPosY > -158 && !isJumping{
+                    dinoPosY -= 10
+                    // dinoPosX += 3.29
+                }
+                else if dinoPosY > -207 && !isJumping{
+                    dinoPosY -= 5
+                    // dinoPosX += 3.29
+                }
+                
+                else if dinoPosY < -7 && isJumping{
+                    dinoPosY += 10
+                    // dinoPosX += 3.29
+                }
+                
+                
+                
+                if dinoPosY <= -207 {
+                    isJumping = true
+                    isFixPosX = false
+                }
+                else if dinoPosY >= -7 && isJumping {
+                    isJumping = false
+                    getDinoState(state: .walk)
                 }
             }
+            else if dinoState == .walk {
+                if !isFixPosX {
+                    isFixPosX.toggle()
+                    
+                }
+            }
+        }
     }
 }
 extension DinoView{
-#if os(macOS)
+    
     private var dinoImageView: some View {
-        #if os(macOS)
+#if os(macOS)
         Image(nsImage: dinoCurrentImage)
             .resizable()
             .scaledToFit()
             .frame(maxHeight: 107)
-        #else
+#else
         Image(uiImage: dinoCurrentImage)
             .resizable()
             .scaledToFit()
             .frame(maxHeight: 107)
-        #endif
+#endif
     }
+#if os(macOS)
     func getDinoState(state newDinoState: DinoStateModel){
         dinoState = newDinoState
         
         switch newDinoState {
         case .walk:
             dinoCurrentImage = NSImage(named: "\(dinoState.imageName)left")!
-          
+            
             withAnimation(.spring(response: 0.04).repeatForever()){
                 dinoCurrentImage = NSImage(named: "\(dinoState.imageName)right")!
             }
@@ -110,14 +111,14 @@ extension DinoView{
             dinoCurrentImage = NSImage(named: newDinoState.imageName)!
         }
     }
-    #else
+#else
     func getDinoState(state newDinoState: DinoStateModel){
         dinoState = newDinoState
         
         switch newDinoState {
         case .walk:
             dinoCurrentImage = UIImage(named: "\(dinoState.imageName)left")!
-          
+            
             withAnimation(.spring(response: 0.04).repeatForever()){
                 dinoCurrentImage = UIImage(named: "\(dinoState.imageName)right")!
             }
@@ -127,7 +128,7 @@ extension DinoView{
             dinoCurrentImage = UIImage(named: newDinoState.imageName)!
         }
     }
-    #endif
+#endif
     
 }
 struct DinoView_Previews: PreviewProvider {

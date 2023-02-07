@@ -16,7 +16,6 @@
 		AF337BBC2972824600450704 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BBB2972824600450704 /* GameView.swift */; };
 		AF337BC12972824700450704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BC02972824700450704 /* Preview Assets.xcassets */; };
 		AF337BE8297282C100450704 /* Game_watchOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BE7297282C100450704 /* Game_watchOSApp.swift */; };
-		AF337BEA297282C100450704 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF337BE9297282C100450704 /* ContentView.swift */; };
 		AF337BEC297282C200450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BEB297282C200450704 /* Assets.xcassets */; };
 		AF337BEF297282C200450704 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BEE297282C200450704 /* Preview Assets.xcassets */; };
 		AF337BF3297285CD00450704 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF337BA929727CD800450704 /* Assets.xcassets */; };
@@ -53,7 +52,6 @@
 		AF337BC02972824700450704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF337BE5297282C100450704 /* Game-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF337BE7297282C100450704 /* Game_watchOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_watchOSApp.swift; sourceTree = "<group>"; };
-		AF337BE9297282C100450704 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AF337BEB297282C200450704 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF337BEE297282C200450704 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF337BFB2972911F00450704 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -156,11 +154,11 @@
 		AF337BA429727CD700450704 /* Game-MacOS */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC388329923F97006985BA /* App */,
+				AFEC388129923F03006985BA /* Core */,
 				AF337BFD2972914000450704 /* Info.plist */,
-				AF337BA529727CD700450704 /* Game_MacOSApp.swift */,
 				AF337BAE29727CD800450704 /* Game_MacOS.entitlements */,
 				AF337BAB29727CD800450704 /* Preview Content */,
-				AF9B6C8129915A6B0079E20F /* GameView.swift */,
 			);
 			path = "Game-MacOS";
 			sourceTree = "<group>";
@@ -203,12 +201,11 @@
 		AF337BE6297282C100450704 /* Game-watchOS */ = {
 			isa = PBXGroup;
 			children = (
+				AFEC388429923F9F006985BA /* App */,
+				AFEC388229923F08006985BA /* Core */,
 				AF337BFB2972911F00450704 /* Info.plist */,
-				AF337BE7297282C100450704 /* Game_watchOSApp.swift */,
-				AF337BE9297282C100450704 /* ContentView.swift */,
 				AF337BEB297282C200450704 /* Assets.xcassets */,
 				AF337BED297282C200450704 /* Preview Content */,
-				AF9B6C7F2990F28D0079E20F /* GameView.swift */,
 			);
 			path = "Game-watchOS";
 			sourceTree = "<group>";
@@ -235,6 +232,38 @@
 				AF337BBB2972824600450704 /* GameView.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		AFEC388129923F03006985BA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AF9B6C8129915A6B0079E20F /* GameView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AFEC388229923F08006985BA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				AF9B6C7F2990F28D0079E20F /* GameView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		AFEC388329923F97006985BA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AF337BA529727CD700450704 /* Game_MacOSApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AFEC388429923F9F006985BA /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AF337BE7297282C100450704 /* Game_watchOSApp.swift */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,7 +428,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF53561B297D60F2005C8083 /* ObstacleModel.swift in Sources */,
-				AF337BEA297282C100450704 /* ContentView.swift in Sources */,
 				AFD9148A297FCC2C00436337 /* ObstacleView.swift in Sources */,
 				AF337BE8297282C100450704 /* Game_watchOSApp.swift in Sources */,
 				AF9B6C802990F28D0079E20F /* GameView.swift in Sources */,
@@ -782,7 +810,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_ASSET_PATHS = "\"Game-watchOS Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -865,7 +893,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_ASSET_PATHS = "\"Game-watchOS Watch App/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = SHP38F3EM7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_PREVIEWS = YES;
