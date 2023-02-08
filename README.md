@@ -2,8 +2,8 @@
 No Internet Dinosaur - Simple Google Chrome Game Clone - SwiftUI - iOS, macOS, watchOS
 
 ## YouTube Video
-<a href="https://youtu.be/QY6P-yLKaxo" target="_blank">
-YouTubeLink: https://youtu.be/QY6P-yLKaxo
+<a href="https://youtu.be/A1-WUlJ4GRE" target="_blank">
+YouTubeLink: https://youtu.be/A1-WUlJ4GRE
 <img src="https://repository-images.githubusercontent.com/588699516/74e4cb54-be2e-4cee-b266-7e618a8df218" width="729" title="No Internet Dinosaur Game Google - SwiftUI - iOS, macOS, watchOS barisozgen"/>
 </a>
 
